@@ -28,12 +28,12 @@ print("print() com argumentos nomeados")
 num1 = 10
 num2 = 20
 print(num1, num2, sep='-',end="\n")
-
+print("\n")
 #F string
 print(f'num 1 é {num1} | num 2 é {num2}')
 print("num1 é {}  | num2 é {}".format(num1, num2))
-print("num1 é {n1} | num2 é {n2}".format(n2=num2,n1=num1/))
-
+print("num1 é {n1} | num2 é {n2}".format(n2=num2,n1=num1))
+print("\n")
 #Operações aritméticas
 print(f'Adição: {num1+num2}')
 print(f'Subtração: {num1-num2}')
@@ -42,7 +42,7 @@ print(f'Divisão: {num1/num2}')
 print(f'Divisão: {num1//num2}') #Divisão inteira #resultado 2 = inteiro
 print(f'Divisão: {num1/num2}')
 print(f'Exponencial: {num1**num2}')
-
+print("\n")
 #Operações Relacionais
 print(f'Maior que: {num1>num2}')
 print(f'Maior ou igual que: {num1>=num2}')
@@ -51,10 +51,24 @@ print(f'Menor ou igual que: {num1<=num2}')
 print(f'É igual a: {num1==num2}')
 print(f'É igual a: {num1!=num2}')
 
+print("\n")
 #Operadores Lógicos
 num3 = 15
 
-print(f"Usando and: {num1 < num2 and num2 > num3}")
-print(f"Usando or: {num1 < num2 or num2 > num3}")
+#print(f"Usando and: {num1 < num2 and num2 > num3}")
+#print(f"Usando or: {num1 < num2 or num2 > num3}")
 
+num4 = num2
+num5 = 20
+
+print(num4 is num2)
+print(num5 is num2)
+
+print("\n")
+cachorro1 = ["Caramelo","Poodle", "Salsicha"]
+cachorro2 = cachorro1
+cachorro3 = ["Caramelo","Poodle", "Salsicha"]
+
+print(cachorro1 is cachorro2)
+print(cachorro1 is cachorro3)
 
