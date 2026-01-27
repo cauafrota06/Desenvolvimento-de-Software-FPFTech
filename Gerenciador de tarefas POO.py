@@ -34,7 +34,7 @@ class GerenciadorTarefas:
         id_busca = int(input("Digite o ID da tarefa que deseja atualizar o status: "))
 
         for tarefa in self.lista_tarefas:
-            if tarefa.id == id_busca and 0 <= id_busca <len(self.lista_tarefas):
+            if tarefa.id == id_busca:
                 tarefa.status = input("Novo status: ")
 
                 print(f"Tarefa {id_busca} atualizada!")
@@ -54,17 +54,25 @@ class GerenciadorTarefas:
         self.listar_tarefas()
         if not self.lista_tarefas:
             return
+
         try:
+            id_para_deletar = int(input("Digite o ID da tarefa que deseja deletar: "))
+
+            tarefa_encontrada = None
+
             for tarefa in self.lista_tarefas:
-                indice = int(input("Digite o ID da tarefa que deseja atualizar o status: "))
-                if  tarefa.id == indice:
-                    self.lista_tarefas.remove(tarefa)
-                    print(f"Tarefa {indice} deletada com sucesso!")
-                    return
-                else:
-                    print("Índice inválido")
+                if tarefa.id == id_para_deletar:
+                    tarefa_encontrada = tarefa
+                    break
+            if tarefa_encontrada:
+                self.lista_tarefas.remove(tarefa_encontrada)
+                print(f"Tarefa {id_para_deletar} deletada com sucesso!")
+            else:
+
+                print(f"Erro: Não existe tarefa com o ID {id_para_deletar}.")
+
         except ValueError:
-                print("Digite um número inteiro")
+            print("Erro: Por favor, digite um número inteiro correspondente ao ID.")
 
     def menu(self):
 
